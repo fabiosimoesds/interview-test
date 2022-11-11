@@ -1,0 +1,16 @@
+<div class="card m-2">
+      <div class="card-body">
+        <h5 class="card-title"><%= @task.title %></h5>
+        <p class="card-text"><%= @task.description %></p>
+        <p>Status: <%= @task.completed == false ? 'Incomplete' : 'Completed' %></p>
+        <% if current_user == @task.user %>
+          <%= link_to 'Edit Task', edit_task_path(@task), class: "btn btn-secondary"%>
+          <%= link_to 'Delete Task', @task, class: "btn btn-outline-secondary", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        <% else %>
+          <p class='text-danger'>You don`t own this Task</p>
+        <% end %>
+      </div>
+      <div class="card-footer text-muted">
+        Due Date: <%= @task.due_date %>
+      </div>
+    </div>
