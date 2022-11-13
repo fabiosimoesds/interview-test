@@ -84,8 +84,7 @@ gem 'friendly_id', '~> 5.4.0'
 # Pundit to handle authorization
 gem "pundit"
 
+# Rspec
 gem 'rspec-rails', group: [ :test ]
-
-gem 'bullet'
 
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
